@@ -1,44 +1,21 @@
-﻿internal class Program
-{
-    private static void Main(string[] args)
+﻿string carger;
+bool name = false;
+
+Console.WriteLine( "Enter your role name (Administrador, Manager, or User)");
+
+do{
+    carger = Console.ReadLine().Trim().ToLower();
+
+    if (carger == "administrator" || carger == "manager" || carger == "user")
     {
-        string permission = "Admin";
-        int level = 70;
-
-        if (permission.Contains("Admin"))
-        {
-            if (level > 55)
-            {
-                Console.WriteLine("Welcome, Super Admin user.");
-        
-
-        }
-        }
-        else
-        {
-            Console.WriteLine("Welcome, Admin user");
-    
-
+        name = true;
     }
-
-        if (permission.Contains("Manager"))
-        {
-            if (level >= 20)
-            {
-                Console.WriteLine("Contact an Admin for acess");
-                if (level < 20)
-                {
-                    Console.WriteLine("You do not have sufficient privileges.");
-                }
-
-            else
-                    {
-                        Console.WriteLine("You do not have sufficient privileges.");
-            }
-                }
-            }
-        }
+    else
+    {
+        Console.WriteLine($"The role name \"{carger}\" is not valid. Enter your role name (Administrator, Manager, or User):");
     }
+} while (!name);
 
+Console.WriteLine( $"Your input ({carger}) has been accepted");
 
 
